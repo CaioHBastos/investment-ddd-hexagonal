@@ -26,8 +26,10 @@ spring:
   h2:
     console:
       enabled: true
-
-
+  cloud:
+    loadbalancer:
+      ribbon:
+        enable: true
 
 lab:
   investment:

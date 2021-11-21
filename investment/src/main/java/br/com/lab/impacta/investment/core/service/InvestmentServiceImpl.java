@@ -49,8 +49,6 @@ public class InvestmentServiceImpl implements InvestmentServicePortIn {
     @Value("${lab.investment.exceptions.account-is-not-debited-description}")
     private String descriptionExceptionAccountIsNotDebited;
 
-
-
     @Override
     public InvestmentDomainResponse invest(Long productId, Long accountId, Double valueInvestment) {
         Optional<ProductDomainResponse> product = productPersistencePortOut.findById(productId);

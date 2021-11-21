@@ -1,7 +1,7 @@
 package br.com.lab.impacta.investment.application.impl;
 
 import br.com.lab.impacta.investment.application.InvestmentApplication;
-import br.com.lab.impacta.investment.application.adapter.InvestmentAdapter;
+import br.com.lab.impacta.investment.application.mapper.InvestmentApplicationMapper;
 import br.com.lab.impacta.investment.application.dto.request.InvestmentRequest;
 import br.com.lab.impacta.investment.application.dto.response.InvestmentResponse;
 import br.com.lab.impacta.investment.core.domain.response.InvestmentDomainResponse;
@@ -20,6 +20,6 @@ public class InvestmentApplicationImpl implements InvestmentApplication {
         InvestmentDomainResponse investment = investmentService.invest(investmentRequest.getProductId(), accountId,
                 investmentRequest.getValue());
 
-        return InvestmentAdapter.toDtoInvestment(investment);
+        return InvestmentApplicationMapper.toDtoInvestment(investment);
     }
 }

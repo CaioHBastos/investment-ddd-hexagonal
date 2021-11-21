@@ -3,18 +3,10 @@ package br.com.lab.impacta.investment.adapter.out.http;
 import br.com.lab.impacta.investment.core.facade.dto.DebitAccountRequest;
 import br.com.lab.impacta.investment.core.facade.valueObject.AccountBalanceVO;
 import br.com.lab.impacta.investment.core.facade.valueObject.DebitAccountVO;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(name = "${lab.investment.paths.client-account-name}",
-             url = "${lab.investment.paths.client-account-base-url}")
 public interface AccountClient {
 
-    @GetMapping("${lab.investment.paths.client-account-balance-path-url}")
-    AccountBalanceVO accountBalance(@PathVariable("accountId") Long accountId);
+    AccountBalanceVO getAccountBalanceById(Long accountId);
 
-    @PostMapping("${lab.investment.paths.client-account-debit-path-url}")
-    DebitAccountVO debit(@PathVariable("accountId") Long accountId, DebitAccountRequest debitAccountRequest);
+    DebitAccountVO debitAccount(Long accountId, DebitAccountRequest debitAccountRequest);
 }

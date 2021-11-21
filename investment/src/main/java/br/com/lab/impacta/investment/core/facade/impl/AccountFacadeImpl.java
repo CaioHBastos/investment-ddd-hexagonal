@@ -6,7 +6,6 @@ import br.com.lab.impacta.investment.core.facade.dto.DebitAccountRequest;
 import br.com.lab.impacta.investment.core.facade.valueObject.AccountBalanceVO;
 import br.com.lab.impacta.investment.core.facade.valueObject.DebitAccountVO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,14 +16,14 @@ public class AccountFacadeImpl implements AccountFacade {
 
     @Override
     public AccountBalanceVO getAccountBalanceById(Long accountId) {
-        AccountBalanceVO accountBalanceVO = accountClient.accountBalance(accountId);
+        AccountBalanceVO accountBalanceVO = accountClient.getAccountBalanceById(accountId);
 
         return accountBalanceVO;
     }
 
     @Override
     public boolean debitAccount(Long accountId, Double valueOfInvestment) {
-        DebitAccountVO debitAccountVO = accountClient.debit(accountId, new DebitAccountRequest(valueOfInvestment));
+        DebitAccountVO debitAccountVO = accountClient.debitAccount(accountId, new DebitAccountRequest(valueOfInvestment));
 
         return  debitAccountVO.isDebited();
     }

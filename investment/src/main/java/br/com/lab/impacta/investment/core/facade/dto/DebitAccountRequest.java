@@ -8,7 +8,7 @@ public class DebitAccountRequest {
 
     public DebitAccountRequest() {}
 
-    public  DebitAccountRequest(Double valueOfDebit) {
+    public DebitAccountRequest(Double valueOfDebit) {
         this.valueOfDebit = valueOfDebit;
     }
 }
