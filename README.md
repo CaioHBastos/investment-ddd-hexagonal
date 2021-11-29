@@ -1,4 +1,4 @@
-#INVESTMENT-DDD-HEXAGONAL
+# INVESTMENT-DDD-HEXAGONAL
 
 Aplicação com foco em estudo com o DDD (Domain Driven Design) e arquitetura hexagonal.
 
